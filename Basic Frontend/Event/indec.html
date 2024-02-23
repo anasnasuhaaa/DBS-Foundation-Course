@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="countHandler()">Count <span id="current-value">0</span></button>
+    <button onclick="restHandler()">reset</span></button>
+</body>
+
+<script>
+    let currentValue = document.getElementById('current-value')
+    function count() {
+        currentValue.innerText++;
+    }
+    function countHandler (){
+        count();
+    }
+    function restHandler(){
+        currentValue.innerText = 0;
+    }
+</script>
+
+</html>
