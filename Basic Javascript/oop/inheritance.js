@@ -42,11 +42,22 @@ class WhatsAppService2 extends MailService {
   }
 }
 
+// Subclass Email
+class EmailSerice extends MailService {
+  sendEmailMessage(message, receiver, delay) {
+    setTimeout(() => {
+      this.sendMessage(message, receiver);
+    }, delay);
+  }
+}
+
 const message1 = new WhatsAppService2("Anas");
 message1.sendBroadcastMessage("Hello Guys", [
   "John Doe",
   "John Wick",
   "Anies Baswedan",
 ]);
-
 console.log(message1 instanceof WhatsAppService2);
+
+const emailMessage = new EmailSerice('John Wick')
+emailMessage.sendEmailMessage("Hi John! How are you?", "johnwick@gmail.com", 3000)
