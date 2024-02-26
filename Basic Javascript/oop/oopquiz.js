@@ -39,8 +39,14 @@ class Rabbit extends Animal() {
     return `${this.name} sedang makan!`;
   }
 }
-class Eagle extends Animal {
-    
+class Eagle extends Animal() {
+  fly() {
+    return `${this.name} sedang terbang`;
+  }
 }
+
 const myRabbit = new Rabbit("Labi", 2, true);
-console.log(myRabbit.eat()); // Labi sedang makan 
+console.log(myRabbit.eat()); // Labi sedang makan
+const myEagle = new Eagle("Elo", 4, false);
+console.log(myEagle.fly()); // Elo sedang terbang</
+
