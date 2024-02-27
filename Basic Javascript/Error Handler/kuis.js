@@ -44,35 +44,37 @@
 
 // TODO 1
 class ValidationError extends Error {
-    constructor(message) {
-        super(message);
-        this.name = "ValidationError";
-    }
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
 }
 
 // TODO 2
 function validateNumberInput(...args) {
-    const [x, y, z] = args;
-    if (typeof x !== 'number') throw new ValidationError('Argumen pertama harus number');
-    if (typeof y !== 'number') throw new ValidationError('Argumen kedua harus number');
-    if (z === null || typeof z !== 'number') throw new ValidationError('Argumen ketiga harus number');
+  const [x, y, z] = args;
+  if (typeof x !== "number")
+    throw new ValidationError("Argumen pertama harus number");
+  if (typeof y !== "number")
+    throw new ValidationError("Argumen kedua harus number");
+  if (z === null || typeof z !== "number")
+    throw new ValidationError("Argumen ketiga harus number");
 }
 
 const detectTriangle = (a, b, c) => {
-    // TODO 3
-    try {
-        validateNumberInput(a, b, c);
-        if (a === b && b === c) {
-          return 'Segitiga sama sisi';
-        }
-      
-        if (a === b || a === c || b === c) {
-          return 'Segitiga sama kaki';
-        }else{
-        return 'Segitiga sembarang';
-        }
-    } catch(error) {    
-        console.log(`Error: ${error.message}`);
+  // TODO 3
+  try {
+    validateNumberInput(a, b, c);
+    if (a === b && b === c) {
+      return "Segitiga sama sisi";
     }
+
+    if (a === b || a === c || b === c) {
+      return "Segitiga sama kaki";
+    } else {
+      return "Segitiga sembarang";
+    }
+  } catch (error) {
+    console.log(`Error: ${error.message}`);
+  }
 };
-  
